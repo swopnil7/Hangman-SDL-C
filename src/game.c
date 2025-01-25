@@ -14,7 +14,7 @@ void runGame(SDL_Renderer *renderer) {
     int running = 1;
     SDL_Event event;
 
-    TTF_Font *font = TTF_OpenFont("path/to/font.ttf", 24);
+    TTF_Font *font = TTF_OpenFont("ARIAL.TTF", 24);
     if (!font) {
         printf("Failed to load font! TTF_Error: %s\n", TTF_GetError());
         return;
@@ -61,4 +61,13 @@ void runGame(SDL_Renderer *renderer) {
     }
 
     TTF_CloseFont(font);
+
+    // Wait for the user to close the window
+    while (running) {
+        while (SDL_PollEvent(&event)) {
+            if (event.type == SDL_QUIT) {
+                running = 0;
+            }
+        }
+    }
 }
