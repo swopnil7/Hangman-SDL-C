@@ -1,6 +1,6 @@
-# Hangman-SDL-C
+# Hangman-In-C
 
-Welcome to **Hangman-SDL-C**, a visually appealing and interactive Hangman game built by me for my C class project using SDL2 and SDL2_ttf libraries. This project showcases a classic word-guessing game with enhanced graphics and animations to provide an engaging user experience.
+Welcome to **The-Hangman**, a visually appealing and interactive Hangman game built by me for my C class project using SDL2 and SDL2_ttf libraries. This project showcases a classic word-guessing game with enhanced graphics and animations to provide an engaging user experience.
 
 ## Features
 
