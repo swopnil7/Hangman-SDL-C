@@ -57,27 +57,26 @@ void drawLargeHangman(SDL_Renderer *renderer) {
     SDL_RenderDrawLine(renderer, 250, 500, 450, 500); // base
     SDL_RenderDrawLine(renderer, 350, 500, 350, 100); // pole
     SDL_RenderDrawLine(renderer, 350, 100, 500, 100); // top
-    SDL_RenderDrawLine(renderer, 500, 100, 500, 150); // rope
 
-    // Draw the hangman figure
-    SDL_Rect head = {475, 150, 50, 50};
+    // Draw the man standing on the ground
+    SDL_Rect head = {575, 350, 50, 50};
     SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255); // Red color for head
     SDL_RenderFillRect(renderer, &head);
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // White color for eyes
-    SDL_RenderDrawLine(renderer, 485, 160, 495, 170); // left eye
-    SDL_RenderDrawLine(renderer, 495, 160, 485, 170); // left eye
-    SDL_RenderDrawLine(renderer, 505, 160, 515, 170); // right eye
-    SDL_RenderDrawLine(renderer, 515, 160, 505, 170); // right eye
+    SDL_RenderDrawLine(renderer, 585, 360, 595, 370); // left eye
+    SDL_RenderDrawLine(renderer, 595, 360, 585, 370); // left eye
+    SDL_RenderDrawLine(renderer, 605, 360, 615, 370); // right eye
+    SDL_RenderDrawLine(renderer, 615, 360, 605, 370); // right eye
     SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255); // Blue color for body
-    SDL_RenderDrawLine(renderer, 500, 200, 500, 300); // body
+    SDL_RenderDrawLine(renderer, 600, 400, 600, 450); // body
     SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255); // Green color for left arm
-    SDL_RenderDrawLine(renderer, 500, 220, 475, 270); // left arm
+    SDL_RenderDrawLine(renderer, 600, 420, 575, 470); // left arm
     SDL_SetRenderDrawColor(renderer, 255, 255, 0, 255); // Yellow color for right arm
-    SDL_RenderDrawLine(renderer, 500, 220, 525, 270); // right arm
+    SDL_RenderDrawLine(renderer, 600, 420, 625, 470); // right arm
     SDL_SetRenderDrawColor(renderer, 255, 165, 0, 255); // Orange color for left leg
-    SDL_RenderDrawLine(renderer, 500, 300, 475, 350); // left leg
+    SDL_RenderDrawLine(renderer, 600, 450, 575, 500); // left leg
     SDL_SetRenderDrawColor(renderer, 255, 0, 255, 255); // Magenta color for right leg
-    SDL_RenderDrawLine(renderer, 500, 300, 525, 350); // right leg
+    SDL_RenderDrawLine(renderer, 600, 450, 625, 500); // right leg
 }
 
 void getInput(SDL_Renderer *renderer, TTF_Font *font, char *input, int maxLength) {
