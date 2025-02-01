@@ -54,30 +54,30 @@ void drawLargeHangman(SDL_Renderer *renderer) {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 
     // Draw the gallows
-    SDL_RenderDrawLine(renderer, 200, 400, 400, 400); // base
-    SDL_RenderDrawLine(renderer, 300, 400, 300, 100); // pole
-    SDL_RenderDrawLine(renderer, 300, 100, 450, 100); // top
-    SDL_RenderDrawLine(renderer, 450, 100, 450, 150); // rope
+    SDL_RenderDrawLine(renderer, 250, 450, 450, 450); // base
+    SDL_RenderDrawLine(renderer, 350, 450, 350, 150); // pole
+    SDL_RenderDrawLine(renderer, 350, 150, 500, 150); // top
+    SDL_RenderDrawLine(renderer, 500, 150, 500, 200); // rope
 
     // Draw the hangman figure
-    SDL_Rect head = {425, 150, 50, 50};
+    SDL_Rect head = {475, 200, 50, 50};
     SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255); // Red color for head
     SDL_RenderFillRect(renderer, &head);
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255); // Black color for eyes
-    SDL_RenderDrawLine(renderer, 435, 160, 445, 170); // left eye
-    SDL_RenderDrawLine(renderer, 445, 160, 435, 170); // left eye
-    SDL_RenderDrawLine(renderer, 455, 160, 465, 170); // right eye
-    SDL_RenderDrawLine(renderer, 465, 160, 455, 170); // right eye
+    SDL_RenderDrawLine(renderer, 485, 210, 495, 220); // left eye
+    SDL_RenderDrawLine(renderer, 495, 210, 485, 220); // left eye
+    SDL_RenderDrawLine(renderer, 505, 210, 515, 220); // right eye
+    SDL_RenderDrawLine(renderer, 515, 210, 505, 220); // right eye
     SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255); // Blue color for body
-    SDL_RenderDrawLine(renderer, 450, 200, 450, 300); // body
+    SDL_RenderDrawLine(renderer, 500, 250, 500, 350); // body
     SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255); // Green color for left arm
-    SDL_RenderDrawLine(renderer, 450, 220, 400, 270); // left arm
+    SDL_RenderDrawLine(renderer, 500, 270, 450, 320); // left arm
     SDL_SetRenderDrawColor(renderer, 255, 255, 0, 255); // Yellow color for right arm
-    SDL_RenderDrawLine(renderer, 450, 220, 500, 270); // right arm
+    SDL_RenderDrawLine(renderer, 500, 270, 550, 320); // right arm
     SDL_SetRenderDrawColor(renderer, 255, 165, 0, 255); // Orange color for left leg
-    SDL_RenderDrawLine(renderer, 450, 300, 400, 400); // left leg
+    SDL_RenderDrawLine(renderer, 500, 350, 450, 450); // left leg
     SDL_SetRenderDrawColor(renderer, 255, 0, 255, 255); // Magenta color for right leg
-    SDL_RenderDrawLine(renderer, 450, 300, 500, 400); // right leg
+    SDL_RenderDrawLine(renderer, 500, 350, 550, 450); // right leg
 }
 
 void getInput(SDL_Renderer *renderer, TTF_Font *font, char *input, int maxLength) {
@@ -129,7 +129,7 @@ void runGame(SDL_Renderer *renderer) {
     // Display welcome message
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
     SDL_RenderClear(renderer);
-    renderText(renderer, font, "Hangman Game by Swopnil", 50, 50);
+    renderText(renderer, font, "Welcome to The Hangman Game by Swopnil", 50, 50);
     renderText(renderer, font, "Press any key to start...", 50, 100);
     drawLargeHangman(renderer);
     SDL_RenderPresent(renderer);
