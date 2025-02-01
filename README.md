@@ -69,6 +69,6 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ## Contact
 
-For any questions or suggestions, feel free to reach out to [Swopnil](mailto:report2swopnil@gmail.com).
+For any questions or suggestions, feel free to reach out to [me](mailto:report2swopnil@gmail.com).
 
 Enjoy playing Hangman-SDL-C!
