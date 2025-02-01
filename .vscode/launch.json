@@ -2,17 +2,16 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "GDB Debug",
+            "name": "Debug Hangman",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/test_sdl.exe",
+            "program": "${workspaceFolder}/hangman",
             "args": [],
-            "stopAtEntry": true,
+            "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
-            "externalConsole": true,
+            "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "C:\\msys64\\mingw64\\bin\\gdb.exe",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -20,7 +19,11 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "C/C++: gcc.exe build SDL test"
+            "preLaunchTask": "Build Hangman",
+            "miDebuggerPath": "C:/msys64/mingw64/bin/gdb.exe",
+            "logging": {
+                "engineLogging": true
+            }
         }
     ]
 }

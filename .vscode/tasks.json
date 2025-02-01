@@ -2,29 +2,37 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "type": "cppbuild",
-            "label": "C/C++: gcc.exe build SDL test",
-            "command": "C:\\msys64\\mingw64\\bin\\gcc.exe",
+            "label": "Build Hangman",
+            "type": "shell",
+            "command": "gcc",
             "args": [
-                "-fdiagnostics-color=always",
-                "-g",
-                "test.c",
-                "-I", "src/include",
-                "-L", "src/lib",
-                "-lmingw32",
-                "-lSDL2main",
-                "-lSDL2",
-                "-o", "test_sdl.exe"
+                "-o", "hangman",
+                "src/main.c", "src/game.c", "src/renderer.c",
+                "-I./src/include/SDL2",
+                "-L./src/lib",
+                "-lSDL2", "-lSDL2_ttf"
             ],
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
-            "problemMatcher": ["$gcc"],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "compiler: C:\\msys64\\mingw64\\bin\\gcc.exe"
+            "problemMatcher": ["$gcc"],
+            "detail": "Generated task for building the Hangman game"
+        },
+        {
+            "label": "Run Hangman",
+            "type": "shell",
+            "command": "./hangman",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
         }
     ]
 }
