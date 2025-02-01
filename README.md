@@ -13,10 +13,10 @@ Welcome to **Hangman-SDL-C**, a visually appealing and interactive Hangman game 
 ## Screenshots
 
 ![Welcome Screen](screenshots/welcome_screen.png)
-*Welcome screen with a larger Hangman figure and game title.*
+*Welcome screen*
 
 ![Game Screen](screenshots/game_screen.png)
-*Game screen with the Hangman figure and word guessing interface.*
+*Game screen*
 
 ## Getting Started
 
