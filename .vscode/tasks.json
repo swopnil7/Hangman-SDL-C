@@ -10,7 +10,7 @@
                 "src/main.c", "src/game.c", "src/renderer.c",
                 "-I./src/include/SDL2",
                 "-L./src/lib",
-                "-lSDL2", "-lSDL2_ttf"
+                "-lmingw32", "-lSDL2main", "-lSDL2", "-lSDL2_ttf"
             ],
             "group": {
                 "kind": "build",
