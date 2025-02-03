@@ -7,75 +7,69 @@
 #include "include/SDL2/SDL_timer.h"
 
 void drawHangman(SDL_Renderer *renderer, int attempts) {
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // White color for stand and rope
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 
-    // Draw the gallows
     SDL_RenderDrawLine(renderer, 500, 500, 700, 500); // base
     SDL_RenderDrawLine(renderer, 600, 500, 600, 100); // pole
     SDL_RenderDrawLine(renderer, 600, 100, 750, 100); // top
     SDL_RenderDrawLine(renderer, 750, 100, 750, 150); // rope
 
-    // Draw the hangman figure based on the number of incorrect attempts
     if (attempts <= 5) {
-        // Draw head
         SDL_Rect head = {725, 150, 50, 50};
-        SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255); // Red color for head
+        SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
         SDL_RenderFillRect(renderer, &head);
-        // Draw eyes
-        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // White color for eyes
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
         SDL_RenderDrawLine(renderer, 735, 160, 745, 170); // left eye
         SDL_RenderDrawLine(renderer, 745, 160, 735, 170); // left eye
         SDL_RenderDrawLine(renderer, 755, 160, 765, 170); // right eye
         SDL_RenderDrawLine(renderer, 765, 160, 755, 170); // right eye
     }
     if (attempts <= 4) {
-        SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255); // Blue color for body
+        SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
         SDL_RenderDrawLine(renderer, 750, 200, 750, 300); // body
     }
     if (attempts <= 3) {
-        SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255); // Green color for left arm
+        SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
         SDL_RenderDrawLine(renderer, 750, 220, 725, 270); // left arm
     }
     if (attempts <= 2) {
-        SDL_SetRenderDrawColor(renderer, 255, 255, 0, 255); // Yellow color for right arm
+        SDL_SetRenderDrawColor(renderer, 255, 255, 0, 255);
         SDL_RenderDrawLine(renderer, 750, 220, 775, 270); // right arm
     }
     if (attempts <= 1) {
-        SDL_SetRenderDrawColor(renderer, 255, 165, 0, 255); // Orange color for left leg
+        SDL_SetRenderDrawColor(renderer, 255, 165, 0, 255);
         SDL_RenderDrawLine(renderer, 750, 300, 725, 350); // left leg
     }
     if (attempts == 0) {
-        SDL_SetRenderDrawColor(renderer, 255, 0, 255, 255); // Magenta color for right leg
+        SDL_SetRenderDrawColor(renderer, 255, 0, 255, 255);
         SDL_RenderDrawLine(renderer, 750, 300, 775, 350); // right leg
     }
 }
 
 void drawLargeHangman(SDL_Renderer *renderer) {
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // White color for stand and rope
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 
-    // Draw the gallows
     SDL_RenderDrawLine(renderer, 250, 500, 450, 500); // base
     SDL_RenderDrawLine(renderer, 350, 500, 350, 100); // pole
     SDL_RenderDrawLine(renderer, 350, 100, 500, 100); // top
 
-    // Draw the man standing on the ground
     SDL_Rect head = {575, 350, 50, 50};
-    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255); // Red color for head
+    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
     SDL_RenderFillRect(renderer, &head);
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // White color for eyes
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
     SDL_RenderDrawLine(renderer, 585, 360, 595, 370); // left eye
     SDL_RenderDrawLine(renderer, 595, 360, 585, 370); // left eye
     SDL_RenderDrawLine(renderer, 605, 360, 615, 370); // right eye
     SDL_RenderDrawLine(renderer, 615, 360, 605, 370); // right eye
-    SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255); // Blue color for body
+    SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
     SDL_RenderDrawLine(renderer, 600, 400, 600, 450); // body
-    SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255); // Green color for left arm
+    SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
     SDL_RenderDrawLine(renderer, 600, 420, 575, 470); // left arm
-    SDL_SetRenderDrawColor(renderer, 255, 255, 0, 255); // Yellow color for right arm
+    SDL_SetRenderDrawColor(renderer, 255, 255, 0, 255);
     SDL_RenderDrawLine(renderer, 600, 420, 625, 470); // right arm
-    SDL_SetRenderDrawColor(renderer, 255, 165, 0, 255); // Orange color for left leg
+    SDL_SetRenderDrawColor(renderer, 255, 165, 0, 255);
     SDL_RenderDrawLine(renderer, 600, 450, 575, 500); // left leg
-    SDL_SetRenderDrawColor(renderer, 255, 0, 255, 255); // Magenta color for right leg
+    SDL_SetRenderDrawColor(renderer, 255, 0, 255, 255);
     SDL_RenderDrawLine(renderer, 600, 450, 625, 500); // right leg
 }
 
@@ -108,7 +102,7 @@ void getInput(SDL_Renderer *renderer, TTF_Font *font, char *input, int maxLength
             }
         }
 
-        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255); // Dark background
+        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);
         renderText(renderer, font, "Enter the word to guess:", 50, 50);
         renderText(renderer, font, displayInput, 50, 100);
@@ -125,8 +119,7 @@ void runGame(SDL_Renderer *renderer) {
         return;
     }
 
-    // Display welcome message
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255); // Dark background
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
     renderText(renderer, font, "Welcome to The Hangman Game by Swopnil", 50, 50);
     renderText(renderer, font, "Press any key to start...", 50, 100);
@@ -164,11 +157,11 @@ void runGame(SDL_Renderer *renderer) {
                 running = 0;
             } else if (event.type == SDL_KEYDOWN) {
                 char guess = event.key.keysym.sym;
-                guess = tolower(guess); // Convert to lowercase
+                guess = tolower(guess);
                 if (guess >= 'a' && guess <= 'z') {
                     int correctGuess = 0;
                     for (int i = 0; i < wordLength; i++) {
-                        if (tolower(word[i]) == guess) { // Convert word[i] to lowercase
+                        if (tolower(word[i]) == guess) {
                             guessedWord[i] = word[i];
                             correctGuess = 1;
                         }
@@ -180,7 +173,7 @@ void runGame(SDL_Renderer *renderer) {
             }
         }
 
-        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255); // Dark background
+        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);
 
         renderText(renderer, font, "Will you let an innocent soul perish?", 50, 20);
@@ -190,7 +183,6 @@ void runGame(SDL_Renderer *renderer) {
         sprintf(attemptsStr, "%d", attempts);
         renderText(renderer, font, attemptsStr, 200, 350);
 
-        // Add playful message
         renderText(renderer, font, "Can you guess it?", 50, 400);
         renderText(renderer, font, "Don't mess up!", 50, 450);
 
@@ -199,18 +191,18 @@ void runGame(SDL_Renderer *renderer) {
         SDL_RenderPresent(renderer);
 
         if (strcmp(word, guessedWord) == 0) {
-            SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255); // Dark background
+            SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
             SDL_RenderClear(renderer);
             renderText(renderer, font, "You won!", 50, 50);
             renderText(renderer, font, "Thanks for playing!", 50, 100);
             SDL_RenderPresent(renderer);
-            SDL_Delay(3000); // Wait for 3 seconds
+            SDL_Delay(3000);
             running = 0;
         }
     }
 
     if (attempts == 0) {
-        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255); // Dark background
+        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);
         renderText(renderer, font, "You lost!", 50, 50);
         char lostMessage[128];
@@ -218,7 +210,7 @@ void runGame(SDL_Renderer *renderer) {
         renderText(renderer, font, lostMessage, 50, 100);
         renderText(renderer, font, "Thanks for playing!", 50, 150);
         SDL_RenderPresent(renderer);
-        SDL_Delay(3000); // Wait for 3 seconds
+        SDL_Delay(3000);
     }
 
     TTF_CloseFont(font);
