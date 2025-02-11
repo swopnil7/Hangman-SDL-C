@@ -5,4 +5,4 @@
 
 void runGame(SDL_Renderer *renderer);
 
-#endif // GAME_H
+#endif

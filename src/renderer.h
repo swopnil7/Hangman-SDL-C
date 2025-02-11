@@ -6,4 +6,4 @@
 
 void renderText(SDL_Renderer *renderer, TTF_Font *font, const char *text, int x, int y);
 
-#endif // RENDERER_H
+#endif
